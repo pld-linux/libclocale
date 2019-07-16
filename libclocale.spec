@@ -1,24 +1,23 @@
+# m4/libcerror.m4
+%define		libcerror_ver	20120425
 Summary:	Library to support cross-platform C locale functions
 Summary(pl.UTF-8):	Biblioteka wspierająca wieloplatformowe funkcje obsługi lokalizacji w C
 Name:		libclocale
-Version:	20150101
-Release:	2
+Version:	20180721
+Release:	1
 License:	LGPL v3+
 Group:		Libraries
-Source0:	https://github.com/libyal/libclocale/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	da7b987fc9729d71fc6ce351106a7e7e
-Patch0:		%{name}-system-libs.patch
+#Source0Download: https://github.com/libyal/libclocale/releases
+Source0:	https://github.com/libyal/libclocale/releases/download/%{version}/%{name}-alpha-%{version}.tar.gz
+# Source0-md5:	f39fa97adcaa5094dc75b7eea5a793d7
 URL:		https://github.com/libyal/libclocale/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1.6
 BuildRequires:	gettext-tools >= 0.18.1
-BuildRequires:	libcerror-devel >= 20120425
-BuildRequires:	libcstring-devel >= 20120425
+BuildRequires:	libcerror-devel >= %{libcerror_ver}
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	sed >= 4.0
-Requires:	libcerror >= 20120425
-Requires:	libcstring >= 20120425
+Requires:	libcerror >= %{libcerror_ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,8 +32,7 @@ Summary:	Header files for libclocale library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libclocale
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libcerror-devel >= 20120425
-Requires:	libcstring-devel >= 20120425
+Requires:	libcerror-devel >= %{libcerror_ver}
 
 %description devel
 Header files for libclocale library.
@@ -56,11 +54,9 @@ Statyczna biblioteka libclocale.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__gettextize}
-%{__sed} -i -e 's/ po\/Makefile.in//' configure.ac
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
