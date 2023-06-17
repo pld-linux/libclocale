@@ -1,21 +1,21 @@
 # m4/libcerror.m4
-%define		libcerror_ver	20120425
+%define		libcerror_ver	20190308
 Summary:	Library to support cross-platform C locale functions
 Summary(pl.UTF-8):	Biblioteka wspierająca wieloplatformowe funkcje obsługi lokalizacji w C
 Name:		libclocale
-Version:	20180721
+Version:	20221218
 Release:	1
 License:	LGPL v3+
 Group:		Libraries
 #Source0Download: https://github.com/libyal/libclocale/releases
 Source0:	https://github.com/libyal/libclocale/releases/download/%{version}/%{name}-alpha-%{version}.tar.gz
-# Source0-md5:	f39fa97adcaa5094dc75b7eea5a793d7
+# Source0-md5:	0ac66a2ab37b37ba4dfbf3387fffc674
 URL:		https://github.com/libyal/libclocale/
-BuildRequires:	autoconf >= 2.59
+BuildRequires:	autoconf >= 2.71
 BuildRequires:	automake >= 1.6
-BuildRequires:	gettext-tools >= 0.18.1
+BuildRequires:	gettext-tools >= 0.21
 BuildRequires:	libcerror-devel >= %{libcerror_ver}
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2
 BuildRequires:	pkgconfig
 Requires:	libcerror >= %{libcerror_ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
