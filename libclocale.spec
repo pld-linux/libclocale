@@ -3,13 +3,13 @@
 Summary:	Library to support cross-platform C locale functions
 Summary(pl.UTF-8):	Biblioteka wspierająca wieloplatformowe funkcje obsługi lokalizacji w C
 Name:		libclocale
-Version:	20260602
+Version:	20260703
 Release:	1
 License:	LGPL v3+
 Group:		Libraries
 #Source0Download: https://github.com/libyal/libclocale/releases
 Source0:	https://github.com/libyal/libclocale/releases/download/%{version}/%{name}-alpha-%{version}.tar.gz
-# Source0-md5:	b851081c0db9ea23c026c712d196b2bf
+# Source0-md5:	bd7104bb3e54ad3be0265d511a84a590
 URL:		https://github.com/libyal/libclocale/
 BuildRequires:	autoconf >= 2.71
 BuildRequires:	automake >= 1.6
